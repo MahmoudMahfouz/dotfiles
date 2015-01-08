@@ -1,0 +1,31 @@
+{
+    "installed_packages":
+    [
+        "AutoFileName",
+        "BracketHighlighter",
+        "ExportHtml",
+        "GenerateUUID",
+        "HexViewer",
+        "PackageResourceViewer",
+        "PlistJsonConverter",
+        "Python Flake8 Lint",
+        "Python Improved",
+        "SideBarGit",
+        "SublimeCodeIntel",
+        "SublimeREPL",
+        "Tag",
+        "Terminal",
+        "Theme - Soda",
+        "GitGutter",
+        "Gutter Color",
+        "ColorPicker",
+        "JSHint Gutter",
+        "SassBeautify",
+        "Emmet",
+        "LiveReload",
+        "SideBarGit",
+        "SideBarEnhancements",
+        "Jade",
+        "HTML-CSS-JS Prettify"
+    ]
+}
