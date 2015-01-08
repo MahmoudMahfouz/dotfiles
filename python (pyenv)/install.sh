@@ -7,3 +7,5 @@ source .exports
 # bash .zshrc
 pyenv install 2.7.8
 pyenv rehash
+pyenv local 2.7.8
+pyenv global 2.7.8

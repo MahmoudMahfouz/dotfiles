@@ -12,3 +12,4 @@ cp Package\ Control.sublime-package "$package_mgr/Package Control.sublime-packag
 settings="$prefix/Packages/User"
 mkdir -p "$settings"
 cp Package\ Control.sublime-settings "$settings/Package Control.sublime-settings"
+cp Preferences.sublime-settings "$settings/Preferences.sublime-settings"

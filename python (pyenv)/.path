@@ -1,0 +1,1 @@
+export PATH="$PYENV_ROOT/bin:$PYENV_ROOT/shims:$PATH"

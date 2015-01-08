@@ -26,6 +26,7 @@
         "SideBarGit",
         "SideBarEnhancements",
         "Jade",
-        "HTML-CSS-JS Prettify"
+        "HTML-CSS-JS Prettify",
+        "EditorConfig"
     ]
 }
