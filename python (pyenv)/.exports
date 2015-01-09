@@ -1,1 +1,1 @@
-export PYENV_ROOT="$HOME/.pyenv"
+export PYENV_ROOT=$pyenv_path

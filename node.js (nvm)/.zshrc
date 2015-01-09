@@ -1,1 +1,1 @@
-source ~/.nvm/nvm.sh
+source "$nvm_path/nvm.sh"

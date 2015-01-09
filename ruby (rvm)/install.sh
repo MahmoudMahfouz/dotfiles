@@ -1,3 +1,6 @@
+source $global_loc
+export rvm_path=$rvm_path
+
 curl -L https://get.rvm.io | bash -s stable --autolibs=enabled --ruby --rails
 . ~/.zshrc
 while true; do

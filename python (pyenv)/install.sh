@@ -1,10 +1,11 @@
-temp_dir="$HOME/.pyenv"
-if [ ! -d $temp_dir ]
+source $global_loc
+if [ ! -d $pyenv_path ]
 	then
-	git clone git://github.com/yyuu/pyenv.git $temp_dir
+	git clone git://github.com/yyuu/pyenv.git $pyenv_path
 fi
 source .exports
-# bash .zshrc
+source .path
+source .zshrc
 pyenv install 2.7.8
 pyenv rehash
 pyenv local 2.7.8
