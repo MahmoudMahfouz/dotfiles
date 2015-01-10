@@ -36,7 +36,7 @@ do
   	fi
 done
 group_files $arr
-for file in */.*
+for file in dst/.*
 do
   	filename=${file##*/}
 	if [[ $filename == ".zshrc" ]]; then
