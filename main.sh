@@ -69,5 +69,10 @@ ln -fs $current/general/.editorconfig ~/.editorconfig
 ln -fs $current/globals $dotfiles_path/.globals
 ln -fs $current/dst/.* $dotfiles_path/
 
-# vim +PluginInstall +qall
+read -p "Do you wish to install Vim plugins? " yn
+    case $yn in
+        [Yy]* ) vim +PluginInstall +qall; break;;
+        [Nn]* ) break;;
+        * ) echo "Please answer yes or no.";;
+    esac
 IFS=$SAVEIFS

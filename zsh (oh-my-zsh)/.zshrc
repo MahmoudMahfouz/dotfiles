@@ -20,6 +20,7 @@ source /Users/mahmoud/.dotfiles/.globals
 source /Users/mahmoud/.dotfiles/.globals
 source /Users/mahmoud/.dotfiles/.globals
 source /Users/mahmoud/.dotfiles/.globals
+source /Users/mahmoud/.dotfiles/.globals
 ###
 # Autoload zsh modules when they are referenced
 ###

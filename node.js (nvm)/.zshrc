@@ -20,4 +20,5 @@ source /Users/mahmoud/.dotfiles/.globals
 source /Users/mahmoud/.dotfiles/.globals
 source /Users/mahmoud/.dotfiles/.globals
 source /Users/mahmoud/.dotfiles/.globals
+source /Users/mahmoud/.dotfiles/.globals
 source "$nvm_path/nvm.sh"
