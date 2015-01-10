@@ -1,1 +1,23 @@
-eval "$(pyenv init -)"
+source /Users/mahmoud/.dotfiles/.globals
+source /Users/mahmoud/.dotfiles/.globals
+source /Users/mahmoud/.dotfiles/.globals
+source /Users/mahmoud/.dotfiles/.globals
+source /Users/mahmoud/.dotfiles/.globals
+source /Users/mahmoud/.dotfiles/.globals
+source /Users/mahmoud/.dotfiles/.globals
+source /Users/mahmoud/.dotfiles/.globals
+source /Users/mahmoud/.dotfiles/.globals
+source /Users/mahmoud/.dotfiles/.globals
+source /Users/mahmoud/.dotfiles/.globals
+source /Users/mahmoud/.dotfiles/.globals
+source /Users/mahmoud/.dotfiles/.globals
+source /Users/mahmoud/.dotfiles/.globals
+source /Users/mahmoud/.dotfiles/.globals
+source /Users/mahmoud/.dotfiles/.globals
+source /Users/mahmoud/.dotfiles/.globals
+source /Users/mahmoud/.dotfiles/.globals
+source /Users/mahmoud/.dotfiles/.globals
+source /Users/mahmoud/.dotfiles/.globals
+source /Users/mahmoud/.dotfiles/.globals
+source /Users/mahmoud/.dotfiles/.globals
+# eval "$(pyenv init -)"

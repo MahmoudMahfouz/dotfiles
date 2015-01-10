@@ -19,5 +19,7 @@
 	"line_padding_top": 0.5,
 	"theme": "Soda Dark 3.sublime-theme",
 	"translate_spaces_to_tabs": true,
+	"insert_final_newline":true,
+	"ensure_newline_at_eof_on_save":true,
 	"word_separators": "./\\()\"'-:,.;<>~!@#$%^&*|+=[]{}`~?_"
 }

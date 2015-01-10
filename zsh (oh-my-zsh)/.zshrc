@@ -1,3 +1,25 @@
+source /Users/mahmoud/.dotfiles/.globals
+source /Users/mahmoud/.dotfiles/.globals
+source /Users/mahmoud/.dotfiles/.globals
+source /Users/mahmoud/.dotfiles/.globals
+source /Users/mahmoud/.dotfiles/.globals
+source /Users/mahmoud/.dotfiles/.globals
+source /Users/mahmoud/.dotfiles/.globals
+source /Users/mahmoud/.dotfiles/.globals
+source /Users/mahmoud/.dotfiles/.globals
+source /Users/mahmoud/.dotfiles/.globals
+source /Users/mahmoud/.dotfiles/.globals
+source /Users/mahmoud/.dotfiles/.globals
+source /Users/mahmoud/.dotfiles/.globals
+source /Users/mahmoud/.dotfiles/.globals
+source /Users/mahmoud/.dotfiles/.globals
+source /Users/mahmoud/.dotfiles/.globals
+source /Users/mahmoud/.dotfiles/.globals
+source /Users/mahmoud/.dotfiles/.globals
+source /Users/mahmoud/.dotfiles/.globals
+source /Users/mahmoud/.dotfiles/.globals
+source /Users/mahmoud/.dotfiles/.globals
+source /Users/mahmoud/.dotfiles/.globals
 ###
 # Autoload zsh modules when they are referenced
 ###
@@ -47,13 +69,6 @@ else
   export LS_COLORS="di=36;40:ln=35;40:so=32;40:pi=33;40:ex=31;40:bd=34;46:cd=34;43:su=0;41:sg=0;46:tw=:ow=:"
 fi
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git osx ruby)
-ZSH_THEME="solarized-powerline"
-
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -101,12 +116,20 @@ ZSH_THEME="solarized-powerline"
 # export PATH="/Users/mahmoud/.rvm/gems/ruby-2.2.0/bin:/Users/mahmoud/.rvm/gems/ruby-2.2.0@global/bin:/Users/mahmoud/.rvm/rubies/ruby-2.2.0/bin:/Users/mahmoud/.nvm/v0.10.35/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/mahmoud/.rvm/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
+source $dotfiles_path/.globals
+source $dotfiles_path/.aliases
+source $dotfiles_path/.exports
+source $dotfiles_path/.functions
+source $dotfiles_path/.path
+source $dotfiles_path/.prompt
 source $ZSH/oh-my-zsh.sh
-source .aliases
-source .exports
-source .functions
-source .path
-source .prompt
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(git osx ruby)
+ZSH_THEME="solarized-powerline"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8

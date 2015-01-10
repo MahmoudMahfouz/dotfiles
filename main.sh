@@ -15,11 +15,7 @@ function group_files {
 		do
 			filename2=${file##*/}
 			if [[ $filename == $filename2 ]]; then
-				if [[ $filename == ".zshrc" ]]; then
-					echo "source $dotfiles_path/.globals" > 'dst/'$filename
-				fi
 				cat $file >> 'dst/'$filename
-				echo "\n\n" >> 'dst/'$filename
 			fi
 		done
 	done
@@ -40,23 +36,38 @@ do
   	fi
 done
 group_files $arr
+for file in */.*
+do
+  	filename=${file##*/}
+	if [[ $filename == ".zshrc" ]]; then
+		echo "source $dotfiles_path/.globals" | cat - $file > /tmp/out && mv /tmp/out $file
+	fi
+done
 
 for file in */install.sh
 do
-	current_dir=$(pwd)/$(dirname $file)
-	cd $current_dir
-	sh install.sh
-	cd ..
+	dir=$(dirname $file)
+	while true; do
+	    read -p "Do you wish to install $dir? " yn
+	    case $yn in
+	        [Yy]* ) current_dir=$(pwd)/$dir; cd $current_dir; sh install.sh; cd ..; break;;
+	        [Nn]* ) break;;
+	        * ) echo "Please answer yes or no.";;
+	    esac
+	done
 done
 
 # symlink gitignore, gitconfig, osx, zshrc, editorconfig, tmux.conf
 
-ln -s $current/dst/.zshrc ~/.zshrc
-ln -s $current/general/.tmux.conf ~/tmux.conf
-ln -s $current/general/.osx ~/.osx
-ln -s $current/general/.editorconfig ~/.editorconfig
-# ln -s $current/git/.gitignore ~/.gitignore   # will be copied automatically when you run install.sh
-# ln -s $current/git/.gitconfig ~/.gitconfig
-ln -s $current/globals $dotfiles_path/.globals
+ln -fs $current/dst/.zshrc ~/.zshrc
+ln -fs $current/dst/.vimrc ~/.vimrc
+ln -fs $current/general/.tmux.conf ~/.tmux.conf
+ln -fs $current/general/.osx ~/.osx
+ln -fs $current/general/.editorconfig ~/.editorconfig
+# ln -fs $current/git/.gitignore ~/.gitignore   # will be copied automatically when you run install.sh
+# ln -fs $current/git/.gitconfig ~/.gitconfig
+ln -fs $current/globals $dotfiles_path/.globals
+ln -fs $current/dst/.* $dotfiles_path/
 
+# vim +PluginInstall +qall
 IFS=$SAVEIFS

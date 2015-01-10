@@ -4,7 +4,11 @@ pyenv_path="$HOME/.pyenv"
 rvm_path="$HOME/.rvm"
 
 # files & dirs excluded from concatenation
-ignored_files="(.DS_Store|.gitignore|.editorconfig)"
+ignored_files="(.DS_Store|.gitignore|.editorconfig|.osx|.tmux.conf)"
 ignored_dir="(git|tmp)"
 
 dotfiles_path="$HOME/.dotfiles"
+vim_path="$dotfiles_path/.vim"
+
+# export the path of this file
+# export global_loc=$PWD/globals
