@@ -1,1 +1,4 @@
-ZSH_THEME="solarized-powerline"
+# ZSH_THEME="solarized-powerline"
+ZSH_THEME="pygmalion"
+export ANDROID_HOME=/usr/local/Cellar/android-sdk
+export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools

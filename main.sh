@@ -72,7 +72,7 @@ ln -fs $current/dst/.* $dotfiles_path/
 read -p "Do you wish to install Vim plugins? " yn
     case $yn in
         [Yy]* ) vim +PluginInstall +qall; break;;
-        [Nn]* ) break;;
+        [Nn]* ) ;;
         * ) echo "Please answer yes or no.";;
     esac
 IFS=$SAVEIFS

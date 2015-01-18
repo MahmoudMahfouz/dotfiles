@@ -107,7 +107,8 @@ source $ZSH/oh-my-zsh.sh
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git osx ruby)
-ZSH_THEME="solarized-powerline"
+# ZSH_THEME="solarized-powerline"
+eval "$(fasd --init auto)"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
