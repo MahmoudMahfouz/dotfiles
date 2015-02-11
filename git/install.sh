@@ -9,4 +9,4 @@ echo "What is your favorite git text editor?"
 read git_editor
 sed "s/GITUSERNAME/$user_name/g;s/GITEDITOR/$git_editor/g;s/GITEMAIL/$email/g;s,DOTFILESPATH,$dotfiles_path,g" .gitconfig-template > ~/.gitconfig
 
-cp .gitignore ~/.gitignore
+ln -s .gitignore ~/.gitignore
