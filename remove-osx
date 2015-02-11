@@ -1,0 +1,60 @@
+defaults delete com.apple.dock mouse-over-hilite-stack 
+
+
+defaults delete com.apple.dock tilesize 
+
+
+defaults delete com.apple.dock mineffect 
+
+
+defaults delete com.apple.dock minimize-to-application 
+
+
+defaults delete com.apple.dock enable-spring-load-actions-on-all-items 
+
+
+defaults delete com.apple.dock show-process-indicators 
+
+
+defaults delete com.apple.dock launchanim 
+
+
+defaults delete com.apple.dock expose-animation-duration 
+defaults delete com.apple.dock workspaces-swoosh-animation-off 
+
+
+defaults delete com.apple.dock expose-group-by-app 
+
+
+defaults delete com.apple.dashboard mcx-disabled 
+
+
+defaults delete com.apple.dock dashboard-in-overlay 
+
+
+defaults delete com.apple.dock mru-spaces 
+
+
+defaults delete com.apple.dock autohide-delay 
+
+defaults delete com.apple.dock autohide-time-modifier 
+
+
+defaults delete com.apple.dock autohide 
+
+
+defaults delete com.apple.dock showhidden 
+
+
+defaults delete com.apple.dock hide-mirror 
+
+defaults delete com.apple.dock wvous-tl-corner 
+defaults delete com.apple.dock wvous-tl-modifier 
+
+defaults delete com.apple.dock wvous-tr-corner 
+defaults delete com.apple.dock wvous-tr-modifier 
+
+defaults delete com.apple.dock wvous-br-corner 
+defaults delete com.apple.dock wvous-br-modifier 
+
+defaults delete com.apple.dock workspaces-edge-delay 
