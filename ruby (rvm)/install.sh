@@ -2,7 +2,7 @@ source $global_loc
 export rvm_path=$rvm_path
 
 curl -L https://get.rvm.io | bash -s stable --autolibs=enabled --ruby --rails
-. ~/.zshrc
+source ~/.rvm/scripts/rvm
 while true; do
     read -p "Do you wish to install some gems? " yn
     case $yn in

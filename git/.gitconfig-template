@@ -80,4 +80,5 @@
     # the usual default is to push all branches
     default = tracking
 [core]
+    editor = /usr/bin/GITEDITOR
     excludesfile = ~/.gitignore

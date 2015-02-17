@@ -2,8 +2,9 @@ source $global_loc
 curl https://raw.githubusercontent.com/creationix/nvm/v0.22.0/install.sh | NVM_DIR=$nvm_path bash
 source .zshrc
 nvm install stable
-nvm use stable
-nvm alias default stable
+nvm install 0.10.35
+nvm use 0.10.35
+nvm alias default 0.10.35
 
 while true; do
     read -p "Do you wish to install some global npms? " yn
