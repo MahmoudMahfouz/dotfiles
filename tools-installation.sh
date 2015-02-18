@@ -1,6 +1,6 @@
 xcode-select --install
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-brew install imagemagick git ant coreutils moreutils tmux
+brew install imagemagick git ant coreutils moreutils tmux vim
 brew install grc fasd spark ack
 brew tap phinze/homebrew-cask
 brew install brew-cask
