@@ -90,17 +90,6 @@ autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 " JS "
 " for beautify use <leader>sb"
 " sourcetype that support by this plugin
- let s:beautifiers.supportedSourceType={
- \'javascript':1,
- \'css':1,
- \'html':1
- \}
-
- " sourcetype name alias
- let s:beautifiers.supportedSourceTypeAlias={
- \'javascript':['js'],
- \'html':['xhtml','htm']
- \}
 
 " jquery "
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery 
