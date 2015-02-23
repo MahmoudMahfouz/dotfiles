@@ -1,0 +1,120 @@
+" GENERAL "
+colorscheme blazer
+set background=dark
+
+" Key mappings "
+" space + w closes buffer
+nnoremap <leader>w :bw<CR>
+" space + q closes all
+nnoremap <leader>q :qa<CR>
+" closing aliases "
+command WQ wq
+command Wq wq
+command W w
+command Q q
+
+" toggle the C tagbar
+nmap <F9> :TagbarToggle<CR>
+
+" easy motion
+let g:EasyMotion_smartcase = 1 " case insensitive matching
+let g:EasyMotion_use_smartsign_us = 1 " match 3 and # 
+map / <Plug>(easymotion-sn)
+
+
+" indent highlight activated with <leader>ig
+let g:indent_guides_guide_size = 1
+let g:indent_guides_start_level = 2
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=0 guifg=#4F504B guibg=#3C3D38
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=0 guifg=#3C3D38 guibg=#4F504B
+
+" emmet "
+let g:user_emmet_leader_key='<C-Y>'
+let g:user_emmet_mode='n'    "only enable normal mode functions.
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
+
+" open in browser "
+nmap <leader>f <Plug>(openbrowser-smart-search)
+
+" NERDTree + tabs"
+map <Leader>nt <plug>NERDTreeTabsToggle<CR>
+nnoremap <C-S-F> :NERDTreeFind<CR>                      " Ctrl+F triggers NERDTreeFind
+
+" DASH "
+nmap <leader>d <Plug>DashGlobalSearch
+
+" smart line numbers "
+nnoremap <F3> :NumbersToggle<CR>
+nnoremap <F4> :NumbersOnOff<CR>
+
+" Undo Tree "
+nnoremap <leader>ut :UndotreeToggle<cr>
+
+" SURROUND "
+" use cs"[  remember with change surrounding from " to [
+
+" Syntastic "
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_enable_signs = 1
+
+" CTRL+P "
+let g:ctrlp_map = '<c-p>'
+
+" Python "
+let g:pymode_rope_goto_definition_bind = "<leader>pgd"
+let g:pymode_run_bind = "<leader>pr"
+let g:pymode_doc_bind = "<leader>pd"
+
+" GO "
+au FileType go nmap <Leader>gd <Plug>(go-doc)
+au FileType go nmap <Leader>gdb <Plug>(go-doc-browser)
+au FileType go nmap <leader>gr <Plug>(go-run)
+au FileType go nmap <leader>gt <Plug>(go-test)
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+
+" markdown "
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+
+" JS "
+" for beautify use <leader>sb"
+" sourcetype that support by this plugin
+ let s:beautifiers.supportedSourceType={
+ \'javascript':1,
+ \'css':1,
+ \'html':1
+ \}
+
+ " sourcetype name alias
+ let s:beautifiers.supportedSourceTypeAlias={
+ \'javascript':['js'],
+ \'html':['xhtml','htm']
+ \}
+
+" jquery "
+au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery 
+
+" json "
+au BufRead,BufNewFile *.json setf json
+
+" PHP "
+function! PhpSyntaxOverride()
+  hi! def link phpDocTags  phpDefine
+  hi! def link phpDocParam phpType
+endfunction
+
+augroup phpSyntaxOverride
+  autocmd!
+  autocmd FileType php call PhpSyntaxOverride()
+augroup END

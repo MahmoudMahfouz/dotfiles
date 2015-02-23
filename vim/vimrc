@@ -3,6 +3,15 @@ filetype off                  " required
 
 set rtp+=VIMPATH/bundle/Vundle.vim
 let path="VIMPATH/bundle"
+let mapleader = " "     " set leader key
+syntax on       		" syntax highlighting
+
+" tabs and spaces
+set tabstop=2
+set shiftwidth=2
+set shiftround
+set expandtab
+set scrolloff=999
 
 call vundle#begin(path)
 
@@ -32,7 +41,9 @@ Plugin 'godlygeek/tabular'
 Plugin 'mattn/emmet-vim'
 
 "auto completion"
-Plugin 'Valloric/YouCompleteMe'
+" run this command at the ~/.vim/bundle/YouCompleteMe
+" ./install.sh --clang-completer --omnisharp-completer
+" Plugin 'Valloric/YouCompleteMe'
 
 "indent level guide"
 Plugin 'nathanaelkane/vim-indent-guides'
@@ -66,6 +77,7 @@ Plugin 'greplace.vim'
 
 "nerdtree + tabs"
 Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'scrooloose/nerdtree'
 
 "better line numbers"
 Plugin 'myusuf3/numbers.vim'
