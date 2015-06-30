@@ -1,7 +1,8 @@
 # Node, Python, Ruby version managers
 nvm_path="$HOME/.nvm"
 pyenv_path="$HOME/.pyenv"
-rvm_path="$HOME/.rvm"
+rbenv_path="$HOME/.rbenv"
+#rvm_path="/usr/local/rvm"
 
 # files & dirs excluded from concatenation
 ignored_files="(.DS_Store|.gitignore|.editorconfig|.osx|.tmux.conf)"
