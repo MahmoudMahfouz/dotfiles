@@ -60,6 +60,7 @@ done
 # symlink gitignore, gitconfig, osx, zshrc, editorconfig, tmux.conf
 
 ln -fs $current/dst/.zshrc ~/.zshrc
+ln -fs $current/dst/.ideavimrc ~/.ideavimrc
 ln -fs $current/dst/.vimrc ~/.vimrc
 ln -fs $current/general/.tmux.conf ~/.tmux.conf
 ln -fs $current/general/.osx ~/.osx

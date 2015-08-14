@@ -4,3 +4,4 @@ export ANDROID_HOME=/usr/local/Cellar/android-sdk/24.3.3/
 export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 export PATH="/usr/local/sbin:/usr/local/bin:$PATH"
 export PATH="$rbenv_path/shims:$rbenv_path/bin:$PATH"
+export PATH="/opt/chefdk/bin:$PATH"

@@ -3,7 +3,6 @@ filetype off                  " required
 
 set rtp+=/Users/mahmoud/.dotfiles/.vim/bundle/Vundle.vim
 let path="/Users/mahmoud/.dotfiles/.vim/bundle"
-set nocompatible
 let mapleader = " "     " set leader key
 syntax on       		" syntax highlighting
 
