@@ -1,25 +1,25 @@
 {
 	"bold_folder_labels": true,
-	"color_scheme": "Packages/Color Scheme - Default/Solarized (Dark).tmTheme",
+	"color_scheme": "Packages/User/Kalopsia (Flake8Lint).tmTheme",
 	"draw_indent_guides": true,
 	"draw_minimap_border": true,
-	"font_face": "Source Code Pro Bold",
+	"ensure_newline_at_eof_on_save": true,
+	"font_face": "Inconsolata Bold",
 	"font_options":
 	[
 		"gray_antialias"
 	],
-	"font_size": 12,
+	"font_size": 14,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
-		"Vintage"
+		"JSHint Gutter"
 	],
+	"insert_final_newline": true,
 	"line_padding_bottom": 0.5,
 	"line_padding_top": 0.5,
-	"theme": "Soda Dark 3.sublime-theme",
-	"translate_spaces_to_tabs": true,
-	"insert_final_newline":true,
-	"ensure_newline_at_eof_on_save":true,
+	"theme": "Void.sublime-theme",
+	"vintage": true,
 	"word_separators": "./\\()\"'-:,.;<>~!@#$%^&*|+=[]{}`~?_"
 }

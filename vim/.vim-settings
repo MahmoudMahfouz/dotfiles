@@ -13,6 +13,9 @@ command Wq wq
 command W w
 command Q q
 
+" Vim airline
+set laststatus=2
+
 " toggle the C tagbar
 nmap <F9> :TagbarToggle<CR>
 
@@ -36,23 +39,10 @@ let g:user_emmet_mode='n'    "only enable normal mode functions.
 let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
 
-" open in browser "
-nmap <leader>f <Plug>(openbrowser-smart-search)
-
-" NERDTree + tabs"
-map <Leader>nt <plug>NERDTreeTabsToggle<CR>
-nnoremap <C-S-F> :NERDTreeFind<CR>                      " Ctrl+F triggers NERDTreeFind
-
-" DASH "
-nmap <leader>d <Plug>DashGlobalSearch
-
-" smart line numbers "
-nnoremap <F3> :NumbersToggle<CR>
-nnoremap <F4> :NumbersOnOff<CR>
-
 " Undo Tree "
 nnoremap <leader>ut :UndotreeToggle<cr>
 
+" "
 " SURROUND "
 " use cs"[  remember with change surrounding from " to [
 
@@ -97,13 +87,3 @@ au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
 " json "
 au BufRead,BufNewFile *.json setf json
 
-" PHP "
-function! PhpSyntaxOverride()
-  hi! def link phpDocTags  phpDefine
-  hi! def link phpDocParam phpType
-endfunction
-
-augroup phpSyntaxOverride
-  autocmd!
-  autocmd FileType php call PhpSyntaxOverride()
-augroup END
