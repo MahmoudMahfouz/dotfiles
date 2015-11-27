@@ -109,6 +109,7 @@ source $ZSH/oh-my-zsh.sh
 plugins=(git osx ruby)
 # ZSH_THEME="solarized-powerline"
 eval "$(fasd --init auto)"
+eval "$(scmpuff init -s)"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8

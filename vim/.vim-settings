@@ -1,3 +1,47 @@
+" KEY MAPPINGS "
+
+" Workflow 
+set hidden
+"" tabs (should be changed to not conflict with till command)
+nnoremap <leader>t  :tabnext<CR>
+nnoremap <leader>T  :tabprev<CR>
+nnoremap <leader>tn  :tabnew<CR>
+nnoremap <leader>td  :tabclose<CR>
+
+" buffer managment
+nnoremap <leader>p :bp<cr>
+nnoremap <leader>n :bn<cr>
+
+"" windows
+noremap <C-h>              :wincmd h<cr>
+noremap <C-k>              :wincmd k<cr>
+noremap <C-l>              :wincmd l<cr>
+noremap <C-j>              :wincmd j<cr>
+
+" Mac only alt+M/m
+noremap Â :call MaximizeToggle()<CR>
+nnoremap µ :call MaximizeToggle()<CR>
+
+" Move windows Mac only alt/hjkl 
+noremap ˙              :wincmd H<cr>
+noremap ˚             :wincmd K<cr>
+noremap ¬              :wincmd L<cr>
+noremap ∆              :wincmd J<cr>
+
+"resize windows"
+nmap <left>  :3wincmd <<cr>
+nmap <right> :3wincmd ><cr>
+nmap <up>    :3wincmd +<cr>
+nmap <down>  :3wincmd -<cr>
+map <C-m> :tabedit %<CR> 
+
+"Map escape key to jj -- much faster
+imap jj <esc>
+imap kk <esc>
+imap ll <esc>
+imap hh <esc>
+
+
 " GENERAL "
 colorscheme blazer
 set background=dark
@@ -19,10 +63,30 @@ set laststatus=2
 " toggle the C tagbar
 nmap <F9> :TagbarToggle<CR>
 
+" Multiple cursors
+" Default mapping
+let g:multi_cursor_next_key='<C-n>'
+let g:multi_cursor_prev_key='<C-p>'
+let g:multi_cursor_skip_key='<C-x>'
+let g:multi_cursor_quit_key='<Esc>'
+
+" CTRL+P "
+let g:ctrlp_map = '<c-p>'
+"" ctrlp exclude
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v\.(git|hg|svn|orig)$|\vtmp|\vdoc|\vcoverage|\vtags',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'link': '',
+  \ }
+
 " easy motion
 let g:EasyMotion_smartcase = 1 " case insensitive matching
 let g:EasyMotion_use_smartsign_us = 1 " match 3 and # 
 map / <Plug>(easymotion-sn)
+map <Leader>l <Plug>(easymotion-lineforward)
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+map <Leader>h <Plug>(easymotion-linebackward)
 
 
 " indent highlight activated with <leader>ig
@@ -57,9 +121,6 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_signs = 1
 
-" CTRL+P "
-let g:ctrlp_map = '<c-p>'
-
 " Python "
 let g:pymode_rope_goto_definition_bind = "<leader>pgd"
 let g:pymode_run_bind = "<leader>pr"
@@ -87,3 +148,19 @@ au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
 " json "
 au BufRead,BufNewFile *.json setf json
 
+" FUNCTIONS
+function! MaximizeToggle()
+  if exists("s:maximize_session")
+    exec "source " . s:maximize_session
+    call delete(s:maximize_session)
+    unlet s:maximize_session
+    let &hidden=s:maximize_hidden_save
+    unlet s:maximize_hidden_save
+  else
+    let s:maximize_hidden_save = &hidden
+    let s:maximize_session = tempname()
+    set hidden
+    exec "mksession! " . s:maximize_session
+    only
+  endif
+endfunction
