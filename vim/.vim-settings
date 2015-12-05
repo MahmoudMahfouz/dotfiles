@@ -1,16 +1,14 @@
 " KEY MAPPINGS "
 
-" Workflow 
+" Workflow
 set hidden
 "" tabs (should be changed to not conflict with till command)
-nnoremap <leader>t  :tabnext<CR>
-nnoremap <leader>T  :tabprev<CR>
 nnoremap <leader>tn  :tabnew<CR>
 nnoremap <leader>td  :tabclose<CR>
 
 " buffer managment
-nnoremap <leader>p :bp<cr>
-nnoremap <leader>n :bn<cr>
+nnoremap <leader>k :bp<cr>
+nnoremap <leader>j :bn<cr>
 
 "" windows
 noremap <C-h>              :wincmd h<cr>
@@ -22,25 +20,26 @@ noremap <C-j>              :wincmd j<cr>
 noremap Â :call MaximizeToggle()<CR>
 nnoremap µ :call MaximizeToggle()<CR>
 
-" Move windows Mac only alt/hjkl 
-noremap ˙              :wincmd H<cr>
-noremap ˚             :wincmd K<cr>
-noremap ¬              :wincmd L<cr>
-noremap ∆              :wincmd J<cr>
+" Move windows Mac only alt/hjkl
+noremap ˙              :call WinMove('H')<cr>
+noremap ˚             :call WinMove('K')<cr>
+noremap ¬              :call WinMove('L')<cr>
+noremap ∆              :call WinMove('J')<cr>
 
 "resize windows"
 nmap <left>  :3wincmd <<cr>
 nmap <right> :3wincmd ><cr>
 nmap <up>    :3wincmd +<cr>
 nmap <down>  :3wincmd -<cr>
-map <C-m> :tabedit %<CR> 
+map <C-m> :tabedit %<CR>
 
 "Map escape key to jj -- much faster
 imap jj <esc>
 imap kk <esc>
-imap ll <esc>
-imap hh <esc>
 
+" search
+nnoremap <leader>/ :Ag<SPACE>
+nnoremap <leader>f :Ag <cword><CR>
 
 " GENERAL "
 colorscheme blazer
@@ -56,12 +55,25 @@ command WQ wq
 command Wq wq
 command W w
 command Q q
+" fast write
+map <Esc><Esc> :w<CR>
+
+" for long lines
+noremap <C-J> gj
+noremap <C-K> gk
+
 
 " Vim airline
 set laststatus=2
 
+" Vim editorconfig
+let g:EditorConfig_exec_path = "$dotfiles_path/.editorconfig"
 " toggle the C tagbar
-nmap <F9> :TagbarToggle<CR>
+nmap <leader>tb :TagbarToggle<CR>
+
+" NerdTree
+map <leader>nt :NERDTreeToggle<CR>
+nnoremap <leader>nf :NERDTreeFind<CR>
 
 " Multiple cursors
 " Default mapping
@@ -71,6 +83,11 @@ let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
 
 " CTRL+P "
+"" Increase ctrl-p using ag + caching
+let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+if executable('ag')
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
 let g:ctrlp_map = '<c-p>'
 "" ctrlp exclude
 let g:ctrlp_custom_ignore = {
@@ -81,11 +98,9 @@ let g:ctrlp_custom_ignore = {
 
 " easy motion
 let g:EasyMotion_smartcase = 1 " case insensitive matching
-let g:EasyMotion_use_smartsign_us = 1 " match 3 and # 
+let g:EasyMotion_use_smartsign_us = 1 " match 3 and #
 map / <Plug>(easymotion-sn)
 map <Leader>l <Plug>(easymotion-lineforward)
-map <Leader>j <Plug>(easymotion-j)
-map <Leader>k <Plug>(easymotion-k)
 map <Leader>h <Plug>(easymotion-linebackward)
 
 
@@ -143,7 +158,7 @@ autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 " sourcetype that support by this plugin
 
 " jquery "
-au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery 
+au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
 
 " json "
 au BufRead,BufNewFile *.json setf json
@@ -162,5 +177,18 @@ function! MaximizeToggle()
     set hidden
     exec "mksession! " . s:maximize_session
     only
+  endif
+endfunction
+
+function! WinMove(key)
+  let t:curwin = winnr()
+  exec "wincmd ".a:key
+  if (t:curwin == winnr()) "we havent moved
+    if (match(a:key,'[jk]')) "were we going up/down
+      wincmd v
+    else
+      wincmd s
+    endif
+    exec "wincmd ".a:key
   endif
 endfunction

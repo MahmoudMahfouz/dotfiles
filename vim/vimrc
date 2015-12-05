@@ -1,16 +1,23 @@
+syntax on           " syntax highlighting
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
 set rtp+=/Users/mm/.dotfiles/.vim/bundle/Vundle.vim
 let path="/Users/mm/.dotfiles/.vim/bundle"
 let mapleader = " "     " set leader key
-syntax on       		" syntax highlighting
 
 " tabs and spaces
 set tabstop=2
 set shiftwidth=2
 set shiftround
 set expandtab
+
+let g:airline_powerline_fonts = 1
+let g:airline_theme='wombat'
+let g:Powerline_symbols = 'fancy'
+
+let g:session_autosave_periodic = 5
+let g:session_autosave_silent =true
 
 "Write the old file out when switching between files.
 set autowrite
@@ -19,12 +26,13 @@ set autowrite
 set ruler
 
 "Show lines numbers
+set relativenumber
 set number
 
 "Indent stuff
 set smartindent
 set autoindent
-		
+
 "Highlight searching
 set hlsearch
 
@@ -35,8 +43,8 @@ set smartcase
 " toggle to paste without indenting
 set pastetoggle=<F2>
 
-set timeoutlen=500
-
+let g:airline#extensions#tabline#enabled = 1
+set timeoutlen=250
 
 if has("autocmd")
  augroup myvimrchooks
@@ -46,12 +54,16 @@ if has("autocmd")
 endif
 
 call vundle#begin(path)
+" Vim + tmux
+Plugin 'christoomey/vim-tmux-navigator'
+" window swap  leader-yw leader-pw leader-ww
+Plugin 'wesQ3/vim-windowswap'
 
-" move easily around the buffer"
+" move easily around the buffer  keys: /, leader-h,l
 Plugin 'Lokaltog/vim-easymotion'
 
-"Linting"
-Plugin 'scrooloose/syntastic'
+"fuzzy file finder  ctrl-p | ctrl-k,j | ctrl-z (select or deselect) | ctrl-x,v,o
+Plugin 'kien/ctrlp.vim'
 
 "git wrapper"
 Plugin 'tpope/vim-fugitive'
@@ -59,47 +71,26 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 "gitk"
 Plugin 'gregsexton/gitv'
-"history graph"
+"history graph" leader-ut
 Plugin 'mbbill/undotree'
 
-"surround text with any text easily"
+" Nerd tree  leader-nt
+Plugin 'scrooloose/nerdtree'
+
+"surround text with any text easily  cs[old surr][new surround]
 Plugin 'tpope/vim-surround'
 
-"Multiple cursors"
+"Multiple cursors     ctrl-n,p,x
 Plugin 'terryma/vim-multiple-cursors'
 
-" status/tabline
-Plugin 'bling/vim-airline'
-
-" searcher
+" searcher  /f (find current word) leader-/ (find in files)
 Plugin 'rking/ag.vim'
 
-" buffers line"
-Plugin 'bling/vim-bufferline'
-
-" Rails 
-Plugin 'tpope/vim-rails'
-
-" Tagbar
+" Tagbar  leader-tb
 Plugin 'majutsushi/tagbar'
 
-" useful for indenting css files"
-Plugin 'godlygeek/tabular'
-
-"emmet"
-Plugin 'mattn/emmet-vim'
-
-"indent level guide"
-Plugin 'nathanaelkane/vim-indent-guides'
-
-" add end word in rails function and other languages"
-Plugin 'tpope/vim-endwise'
-
-" auto close quote, brackets, ..
-Plugin 'Raimondi/delimitMate'
-
-"highlight matching html tab"
-Plugin 'gregsexton/MatchTag'
+" Commenting  gc,gcc
+Plugin 'tpope/vim-commentary'
 
 "open browser"
 Plugin 'tyru/open-browser.vim'
@@ -107,17 +98,44 @@ Plugin 'tyru/open-browser.vim'
 "greplace across multiple files interactively
 Plugin 'greplace.vim'
 
-"better line numbers slow scrolling :S "
-"Plugin 'myusuf3/numbers.vim'
+" Snippit
+Plugin 'garbas/vim-snipmate'
 
-"fuzzy file finder"
-Plugin 'kien/ctrlp.vim'
+"emmet"
+Plugin 'mattn/emmet-vim'
+
+"indent level guide"
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'editorconfig/editorconfig-vim'
+
+" add end word in rails function and other languages"
+Plugin 'tpope/vim-endwise'
+
+" auto close quote, brackets, ..
+Plugin 'Raimondi/delimitMate'
+
+" useful for indenting css files"
+Plugin 'godlygeek/tabular'
+
+"highlight matching html tab"
+Plugin 'gregsexton/MatchTag'
 
 " all vim color schemes"
 Plugin 'flazz/vim-colorschemes'
 Plugin 'xolox/vim-misc'
 " color scheme switcher F8, Shift+F8"
 Plugin 'xolox/vim-colorscheme-switcher'
+
+" Lines
+Plugin 'bling/vim-airline'
+Plugin 'bling/vim-bufferline'
+
+" sessions
+Plugin 'xolox/vim-session'
+
+" Completion & Linting
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'scrooloose/syntastic'
 
 """" Languages support """"
 Plugin 'kchmck/vim-coffee-script'
@@ -130,14 +148,13 @@ Plugin 'klen/python-mode'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'elzr/vim-json'
 Plugin 'fatih/vim-go'
-Plugin 'nono/jquery.vim'
-"Plugin 'StanAngeloff/php.vim'
 Plugin 'mxw/vim-jsx'
 Plugin 'burnettk/vim-angular'
 Plugin 'heavenshell/vim-jsdoc'
 Plugin 'rhysd/vim-clang-format'
+Plugin 'tpope/vim-rails'
 
 Plugin 'michalliu/sourcebeautify.vim'
-call vundle#end()         
+call vundle#end()
 filetype plugin indent on    " required
 source /Users/mm/.dotfiles/.vim-settings

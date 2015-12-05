@@ -10,3 +10,5 @@ cd $ZSH/themes
 git clone https://github.com/KuoE0/oh-my-zsh-solarized-powerline-theme.git solarized-powerline
 cd solarized-powerline
 ln -s $PWD/solarized-powerline.zsh-theme $ZSH/themes
+
+pip install powerline-status
