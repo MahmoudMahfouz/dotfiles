@@ -44,8 +44,7 @@
     lla = log --pretty=medium --decorate --abbrev-commit --stat --all --walk-reflogs --relative --remotes
     lll = log --graph --pretty=format:'%Cred%h%Creset %an: %s %Creset%Cgreen(%cr)%Creset' --abbrev-commit --date=relative
 
-    # Sync
-    sync = plu && pso
+
 
     # remove file from changes list
     hide = update-index --assume-unchanged
