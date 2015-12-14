@@ -57,7 +57,7 @@ set autoread
 set pastetoggle=<F2>
 
 let g:airline#extensions#tabline#enabled = 1
-set timeoutlen=250
+set timeoutlen=500
 
 if has("autocmd")
  augroup myvimrchooks
@@ -113,6 +113,8 @@ Plugin 'tyru/open-browser.vim'
 Plugin 'greplace.vim'
 
 " Snippit
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 
 "emmet"
